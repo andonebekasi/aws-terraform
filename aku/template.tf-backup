@@ -1,0 +1,15 @@
+provider "aws" {
+access_key = "AKIA2UJ2T5NKKRRC3RUR"
+secret_key = "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"
+region = "us-east-1"
+}
+
+# Resource configuration
+resource "aws_instance" "testt-instance" {
+ami = "ami-0a887e401f7654935"
+instance_type = "t2.medium"
+user_data = "${file("../../shared/user-data.txt")}"
+tags = {
+Name = "testt-instance"
+}
+}

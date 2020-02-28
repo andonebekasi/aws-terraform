@@ -1,0 +1,15 @@
+provider "aws" {
+access_key = "AKIAXSBC4SSHNWR4CDSR"
+secret_key = "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"
+region = "us-east-1"
+}
+
+# Resource configuration
+resource "aws_instance" "testt-instance" {
+ami = "ami-0a887e401f7654935"
+instance_type = "t2.medium"
+key_name = "test"
+tags = {
+Name = "testt-instance"
+}
+}
